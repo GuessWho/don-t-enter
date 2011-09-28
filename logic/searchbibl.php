@@ -1,15 +1,20 @@
 <?php
-include 'folder/defines_inc.php';
+include ('folder/defines_inc.php');
+include('../smarty/libs/Smarty.class.php');
+$smarty = new Smarty();
+$smarty->assign("self", "$_SERVER['PHP_SELF']")
+$smarty->assign("i", "for($i=0; $row = mysql_fetch_row($result); $i++)
+							{
+								$i=$i;
+							}");
+$smarty->assign()
 mysql_connect(DB_HOST, DB_LOGIN, DB_PASSWD) or die ('DB connect error');
 mysql_select_db (DB_NAME) or die ('DB not exist');
 $sql = "SELECT author, title, rubric, keyword, person, geograf, sourse 
 			FROM bibl";
 $result = mysql_query($sql) or die(mysql_error());
-for($i=0; $row = mysql_fetch_row($result); $i++)
-{
-	$i=$i;
-}
-echo '<div id="num"><h2>Всього записів у базі: ' . $i . '</h2></div>';
+
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 	foreach ($_POST as $k=> $s)
