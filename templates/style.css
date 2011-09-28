@@ -1,0 +1,55 @@
+#body
+{
+	background-color: #8DA7FA;
+	color: #000000;
+	font-size: 18px;
+}
+#header 
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 220px;
+	width: 100%;
+	background-image: url(../images/bg.png);
+	background-repeat: repeat-x;
+}
+#link
+{
+	position: absolute;
+	top: 225px;
+	font-size: 21px;
+	width: 45%;
+	left:50%;
+	margin-left: -22%;
+}
+#result
+{
+	position: absolute;
+	top:275px;
+	width: 100%;
+	color: #000000;
+}
+#num
+{
+	position: absolute;
+	width: 30%;
+	top: 235px;
+}
+#field
+{
+	position: absolute;
+	top: 300px;
+	width: 40%;
+	height: 200px;
+	left: 50%;
+	margin-left: -20%;
+}
+A:visited
+{
+	color: #ffffff;
+}
+A
+{
+	color: #ffffff;
+}
