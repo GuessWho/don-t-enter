@@ -1,20 +1,20 @@
 <?php
 include('private/defines_inc.php');
-include('../smarty/libs/Smarty.class.php');
+include('../smarty/libs/Smarty.class.php');//подключение смарти
 mysql_connect(DB_HOST, DB_LOGIN, DB_PASSWD) or die ('DB connect error');
 mysql_select_db (DB_NAME) or die ('DB not exist');
-$smarty = new Smarty();
-$smarty->assign("self", $_SERVER['PHP_SELF']);
-$sql = "SELECT count(*) from bibl";
+$smarty = new Smarty();//создание сласа смарти
+$smarty->assign("self", SELF_PATH);
+$sql = "SELECT count(*) from bibl";//количество записей в мускуле
 $count = mysql_query($sql) or die (mysql_error());
 $count = mysql_fetch_array($count);
-$smarty->assign("rows_count", $count[0]);
+$smarty->assign("rows_count", $count[0]);//отправка каунта в шаблон
 $smarty->assign("is_post", $_SERVER['REQUEST_METHOD']=="POST");
-if($_SERVER['REQUEST_METHOD']=="POST")
+if($_SERVER['REQUEST_METHOD']=="POST")//проверка отправлялась ли форма
 {
 	foreach ($_POST as $key=> $s)
 	{
-		$_POST['$key'] = mysql_real_escape_string(strip_tags(trim($s)));
+		$_POST['$key'] = mysql_real_escape_string(strip_tags(trim($s)));//убираем все лишнее из поискового запроса
 	}
 	$author = $_POST['author'];
 	$title = $_POST['title'];
@@ -26,17 +26,14 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 	$sql = "SELECT author, title, rubric, keyword, person, geograf, sourse 
 			FROM bibl WHERE author LIKE '%$author%' AND title LIKE '%$title%' AND rubric LIKE '%$rubric%'  
 			AND keyword LIKE '%$keyword%' AND person LIKE '%$person%' AND geograf LIKE '%$geograf%'
-			AND sourse LIKE '%$sourse%' LIMIT 100";	
+			AND sourse LIKE '%$sourse%' LIMIT 100";	//запрос на выборку данных по совпадению
 	$result = mysql_query($sql) or die (mysql_error());
 	mysql_close();
-	while ($row = mysql_fetch_assoc($result))
+	while ($row = mysql_fetch_assoc($result))//присваеваем массиву $rows[]  все совпадающие значения
 	{
 	$rows[] = $row;
 	}
-	/*echo "<pre>";
-	var_dump ($rows);
-	echo "</pre>";*/
-	$smarty->assign('res_row', $rows);
+	$smarty->assign('res_row', $rows);//отправляем массив со значениями в шаблон
 }
-$smarty->display(BIBL_PATH . "/templates/searchbibl.tpl");
+$smarty->display(BIBL_PATH . "/templates/searchbibl.tpl");//выводим все значения на экран через шаблон
 ?>

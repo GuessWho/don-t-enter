@@ -3,10 +3,10 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
 	<title>Статті</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="../templates/style.css">
 </head>
 <body id='body'>
-	<div id='header'><table align='center'><tr><td><img  src="images/Head.png"></td></tr></table></div>
+	<div id='header'><table align='center'><tr><td><img  src="../images/Head.png"></td></tr></table></div>
 	<div id='link'><a href="{$self}">Розпочати новий пошук</a>&nbsp;&nbsp;&nbsp;
 	<a href="../index.html">Выбрати iншу базу</a>&nbsp;&nbsp;&nbsp;
 	<a href="http://chobd.ck.ua">Повернутися на сайт</a></div>
