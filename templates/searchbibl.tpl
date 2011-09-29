@@ -12,7 +12,6 @@
 	<a href="http://chobd.ck.ua">Повернутися на сайт</a></div>
 	<div id="num"><h2>Всього записів у базі:{$rows_count}</h2></div>
 	{if $is_post}
-	Это POST
 	<div id='result'>
 	<table width="100%" border='1' cellspacing='1' cellpadding='1'>
 		<tr bgcolor='#DC8E55'>

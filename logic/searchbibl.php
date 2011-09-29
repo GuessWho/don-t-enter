@@ -9,7 +9,7 @@ $sql = "SELECT count(*) from bibl";//количество записей в мускуле
 $count = mysql_query($sql) or die (mysql_error());
 $count = mysql_fetch_array($count);
 $smarty->assign("rows_count", $count[0]);//отправка каунта в шаблон
-$smarty->assign("is_post", $_SERVER['REQUEST_METHOD']=="POST");
+$smarty->assign("is_post", REQ_POST);
 if($_SERVER['REQUEST_METHOD']=="POST")//проверка отправлялась ли форма
 {
 	foreach ($_POST as $key=> $s)
