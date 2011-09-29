@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Аудіо-візуальні матеріали</title>
+</head>
+<body id='body'>
+	<div id='header'>
+		<table align='center'>
+			<tr>
+				<td><img  src="images/Head.png"></td>
+			</tr>
+		</table>
+	</div>
+	<div id='link'><a href="{$self}">Розпочати новий пошук</a>&nbsp;&nbsp;&nbsp;
+	<a href="DBchoose.php">Выбрати iншу базу</a>&nbsp;&nbsp;&nbsp;
+	<a href="http://chobd.ck.ua">Повернутися на сайт</a></div>		
+	<div id="num"><h2>Всього записів у базі:  </h2></div>
+	<div id='result'>
+		<table bgcolor='#ffffff' border='1' cellspacing='1' cellpadding='1'>
+			<tr bgcolor='#DC8E55'>
+				<td>Автор</td>
+				<td>Название</td>
+				<td>Рубрика</td>
+				<td>Ключ. слова</td>
+			</tr>	
+	<div id='field'><form action="{$self}" method='POST'>	
+		<table align='center'>
+			<tr>
+				<td>Автор:</td><td><input type='text' width='200' size='50' name='author'></td></tr>
+			<tr>
+				<td>Назва:</td><td><input  type='text' width='200' size='50' name='title'></td></tr>
+			<tr>
+				<td>Рубрика:</td><td><input  type='text' width='200' size='50' name='rubric'></td></tr>
+			<tr>
+				<td>Ключові слова:</td><td><input type='text' width='200' size='50' name='keyword'></td></tr>
+			<tr>
+				<td></td><td><input type='submit' value='Знайти'></td>
+			</tr>
+		</table>
+	</form></div>		
+</body>	
+</html>
