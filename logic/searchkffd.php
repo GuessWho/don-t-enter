@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 {
 	foreach($_POST as $key=> $s)
 	{
-		$_POST['$k'] = mysql_real_escape_string(strip_tags(trim($s)));
+		$_POST['$key'] = mysql_real_escape_string(strip_tags(trim($s)));
 	}
 	$author = $_POST['author'];
 	$title = $_POST['title'];
@@ -22,9 +22,13 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 	$keyword = $_POST['keyword'];
 	$sql = "SELECT  author, title, rubric, keyword 
 			FROM kffd WHERE author LIKE '%$author%' AND title LIKE '%$title%' AND rubric LIKE '%$rubric%'  
-			AND keyword LIKE '%$keyword%'";
+			AND keyword LIKE '%$keyword%' LIMIT 100";
 	$result = mysql_query($sql) or die (mysql_error());
-	while($row = mys)
+	while($row = mysql_fetch_assoc($result))
+	{
+		$rows[] = $row;
+	}
 	mysql_close();
-}	
+}
+$smarty->display(BIBL_PATH . '/templates/searchkffd.tpl');	
 ?>

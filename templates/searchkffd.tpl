@@ -16,7 +16,8 @@
 	<div id='link'><a href="{$self}">Розпочати новий пошук</a>&nbsp;&nbsp;&nbsp;
 	<a href="DBchoose.php">Выбрати iншу базу</a>&nbsp;&nbsp;&nbsp;
 	<a href="http://chobd.ck.ua">Повернутися на сайт</a></div>		
-	<div id="num"><h2>Всього записів у базі:  </h2></div>
+	<div id="num"><h2>Всього записів у базі: {$rows_count}  </h2></div>
+	{if $is_post}
 	<div id='result'>
 		<table bgcolor='#ffffff' border='1' cellspacing='1' cellpadding='1'>
 			<tr bgcolor='#DC8E55'>
@@ -25,6 +26,14 @@
 				<td>Рубрика</td>
 				<td>Ключ. слова</td>
 			</tr>	
+			{foreach $rows as $row}
+			{strip}
+			<tr>
+				<td>$row.author</td>
+				<td>$row.title</td>
+				<td>$row.rubric</td>
+				<td>$row.keyword</td>
+	{else}		
 	<div id='field'><form action="{$self}" method='POST'>	
 		<table align='center'>
 			<tr>
@@ -39,6 +48,7 @@
 				<td></td><td><input type='submit' value='Знайти'></td>
 			</tr>
 		</table>
-	</form></div>		
+	</form></div>
+	{/if}
 </body>	
 </html>
