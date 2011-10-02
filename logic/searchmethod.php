@@ -27,7 +27,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 			AND keyword LIKE '%$keyword%' AND person LIKE '%$person%' AND geograf LIKE '%$geograf%'
 			AND sourse LIKE '%$sourse%'";
 	
-	$result = mysql_query($sql) or die (mysql_error());		
+	$result = mysql_query($sql) or die (mysql_error());
+	while ($row = mysql_fetch_array($result));
+	{
+		$rows[] = $row;
+	}
 	mysql_close();
+	$smarty->assign('rows', $rows);
 }
+$smarty->display(BIBL_PATH . '/templates/searchmethod');
 ?>
