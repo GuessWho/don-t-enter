@@ -9,6 +9,7 @@ $sql ="SELECT count(*) from method";
 $count = mysql_query($sql) or die (mysql_error());
 $count = mysql_fetch_array($count);
 $smarty->assign('rows_count', $count[0]);
+$smarty->assign('is_post', REQ_POST)
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
 	foreach ($_POST as $k=> $s)
