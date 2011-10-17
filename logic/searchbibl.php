@@ -3,7 +3,7 @@ include('private/defines_inc.php');
 include('../smarty/libs/Smarty.class.php');//подключение смарти
 mysql_connect(DB_HOST, DB_LOGIN, DB_PASSWD) or die ('DB connect error');
 mysql_select_db (DB_NAME) or die ('DB not exist');
-$smarty = new Smarty();//создание сласа смарти
+$smarty = new Smarty();//создание класса смарти
 $smarty->assign("self", SELF_PATH);
 $sql = "SELECT count(*) from bibl";//количество записей в мускуле
 $count = mysql_query($sql) or die (mysql_error());

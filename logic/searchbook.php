@@ -36,6 +36,8 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 		$rows[] = $row;
 	}
 	$smarty->assign('res_row', $rows);
+	$res_count = count($rows);
+	$smarty->assign('res_count', $res_count);
 }
 $smarty->display(BIBL_PATH . '/templates/searchbook.tpl');
 ?>

@@ -13,23 +13,25 @@
 		</tr>
 	</table>
 </div>
-<div id='link'><a href="{$self}">Розпочати новий пошук</a>&nbsp;&nbsp;&nbsp;
-<a href="DBchoose.php">Выбрати iншу базу</a>&nbsp;&nbsp;&nbsp;
-<a href="http://chobd.ck.ua">Повернутися на сайт</a></div>
-<div id="num"><h2>Всього записів у базі:  {$rows_count}  </h2></div>
+<div id='link'><a href="{$self}">Р РѕР·РїРѕС‡Р°С‚Рё РЅРѕРІРёР№ РїРѕС€СѓРє</a>&nbsp;&nbsp;&nbsp;
+<a href="../index.html">Р’С‹Р±СЂР°С‚Рё iРЅС€Сѓ Р±Р°Р·Сѓ</a>&nbsp;&nbsp;&nbsp;
+<a href="http://chobd.ck.ua">РџРѕРІРµСЂРЅСѓС‚РёСЃСЏ РЅР° СЃР°Р№С‚</a></div>
+<div id="num"><h2>Р’СЃСЊРѕРіРѕ Р·Р°РїРёСЃС–РІ Сѓ Р±Р°Р·С–:  {$rows_count}  </h2><br />
+РќР°Р№РґРµРЅРѕ Р·Р°РїРёСЃРµР№: {$res_count}</div>
+
 {if $is_post}
 <div id='result'>
 		<table bgcolor='#ffffff' border='1' cellspacing='1' cellpadding='1'>
 			<tr bgcolor='#DC8E55'>
-				<td>Автор</td>
-				<td>Назва</td>
-				<td>Рубрика</td>
-				<td>Ключові. слова</td>
-				<td>Персоналії</td>
-				<td>Індекс ББК</td>
-				<td>Мова</td>
-				<td>Рік видання</td>
-				<td>Видавництво</td>
+				<td>РђРІС‚РѕСЂ</td>
+				<td>РќР°Р·РІР°</td>
+				<td>Р СѓР±СЂРёРєР°</td>
+				<td>РљР»СЋС‡РѕРІС– СЃР»РѕРІР°</td>
+				<td>РџРµСЂСЃРѕРЅР°Р»С–С—</td>
+				<td>Р†РЅРґРµРєСЃ Р‘Р‘Рљ</td>
+				<td>РњРѕРІР°</td>
+				<td>Р С–Рє РІРёРґР°РЅРЅСЏ</td>
+				<td>Р’РёРґР°РІРЅРёС†С‚РІРѕ</td>
 			</tr>
 			{foreach $res_row as $row}
 			{strip}
